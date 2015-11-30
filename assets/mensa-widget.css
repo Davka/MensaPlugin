@@ -1,0 +1,216 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+ * studip-mixins.less
+ *
+ * This file contains all mixins created specifically for Stud.IP
+ * while mixins.less should contain a copy of the mixins from
+ * twitter's bootstrap.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License, or (at your option) any later version.
+ *
+ * @author      Jan-Hendrik Willms <tleilax+studip@gmail.com>
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html GPL version 2
+ * @category    Stud.IP
+ * @since       2.4
+ */
+.scrollbox-vertical {
+  overflow: auto;
+  background: /* Shadow covers */ linear-gradient(#ffffff 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), #ffffff 70%) 0 100%, /* Shadows */ radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 0 100%;
+  background: /* Shadow covers */ linear-gradient(#ffffff 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), #ffffff 70%) 0 100%, /* Shadows */ radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  /* Opera doesn't support this in the shorthand */
+  background-attachment: local, local, scroll, scroll;
+}
+.scrollbox-horizontal {
+  overflow: auto;
+  background: /* Shadow covers */ linear-gradient(90deg, #ffffff 30%, rgba(255, 255, 255, 0)), linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff 70%) 100% 0, /* Shadows */ radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 100% 0;
+  background: /* Shadow covers */ linear-gradient(90deg, #ffffff 30%, rgba(255, 255, 255, 0)), linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff 70%) 100% 0, /* Shadows */ radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 100% 0;
+  background-repeat: no-repeat;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  /* Opera doesn't support this in the shorthand */
+  background-attachment: local, local, scroll, scroll;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+/*
+ * arrow.less - CSS arrows mixin
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License, or (at your option) any later version.
+ *
+ * @author      Jan-Hendrik Willms <tleilax+studip@gmail.com>
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html GPL version 2
+ * @category    Stud.IP
+ * @since       2.4
+ */
+section.mensa-widget {
+  margin-bottom: 0;
+  position: relative;
+}
+section.mensa-widget table td:last-child {
+  text-align: right;
+}
+section.mensa-widget footer ul,
+section.mensa-widget footer li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+section.mensa-widget footer ul {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-box-flex;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -moz-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  border: 1px solid #d3d9e5;
+  border-left: 0;
+  border-right: 0;
+}
+section.mensa-widget footer li {
+  display: flex-item;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  font-size: 0.9em;
+  border-right: 1px solid #d3d9e5;
+  text-align: center;
+}
+section.mensa-widget footer li:last-child {
+  border-right: 0;
+}
+section.mensa-widget footer li.current {
+  background-color: rgba(212, 219, 229, 0.8);
+}
+section.mensa-widget footer li.current a {
+  color: #000;
+}
+section.mensa-widget .attributes {
+  font-size: 0.85em;
+  vertical-align: super;
+}
+section.mensa-widget .hidden {
+  opacity: 0.5;
+  font-style: italic;
+}
+section.mensa-widget table:not(.peeking) .hidden {
+  display: none;
+}
+section.mensa-widget .mensa-peeker {
+  float: right;
+  font-size: 0.9em;
+  font-weight: lighter;
+}
+a.mensa-widget-back[disabled],
+a.mensa-widget-forward[disabled] {
+  visibility: hidden;
+}
+.mensa-widget-settings ul.thirds {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mensa-widget-settings ul.thirds li {
+  display: inline-block;
+  min-width: 200px;
+  vertical-align: top;
+  width: 33%;
+}
+.mensa-increases input[type=text] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+.mensa-increases .new-entry:not(:only-child) {
+  display: none;
+}
+.mensa-increases > table {
+  margin-bottom: 0;
+}
+.js .mensa-increases table.collapsable .collapsable-toggle {
+  display: block;
+}
+.js .mensa-increases table.collapsable .collapsable-toggle:before {
+  background-repeat: no-repeat;
+  content: ' ';
+  display: inline-block;
+  height: 16px;
+  margin-right: 5px;
+  background-image: url("http://131.173.82.75/vec_33/assets/images/icons/16/blue/arr_1down.png");
+  background-image: none, url("http://131.173.82.75/vec_33/assets/images/icons/blue/arr_1down.svg");
+  -webkit-background-size: 16px 16px;
+  -moz-background-size: 16px 16px;
+  -o-background-size: 16px 16px;
+  background-size: 16px 16px;
+  vertical-align: text-top;
+  width: 16px;
+}
+.js .mensa-increases table.collapsable:not(.uncollapsed) th.hidden-when-collapsed {
+  color: transparent;
+}
+.js .mensa-increases table.collapsable:not(.uncollapsed) tbody tr {
+  display: none;
+}
+.js .mensa-increases table.collapsable:not(.uncollapsed) .collapsable-toggle:before {
+  background-repeat: no-repeat;
+  content: ' ';
+  display: inline-block;
+  height: 16px;
+  margin-right: 5px;
+  background-image: url("http://131.173.82.75/vec_33/assets/images/icons/16/blue/arr_1right.png");
+  background-image: none, url("http://131.173.82.75/vec_33/assets/images/icons/blue/arr_1right.svg");
+  -webkit-background-size: 16px 16px;
+  -moz-background-size: 16px 16px;
+  -o-background-size: 16px 16px;
+  background-size: 16px 16px;
+  vertical-align: text-top;
+  width: 16px;
+}

@@ -1,0 +1,3 @@
+<section>
+    <?= htmlReady($message) ?>
+</section>
