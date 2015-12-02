@@ -1,6 +1,6 @@
 <?php
 
-class AddCronjob extends DBMigration
+class AddCronjob extends Migration
 {
     function description()
     {
