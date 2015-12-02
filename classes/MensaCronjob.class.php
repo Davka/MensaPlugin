@@ -19,7 +19,7 @@ class MensaCronjob extends CronJob
     public function execute($last_result, $parameters = array())
     {
         $targetFile  = 'mensa.txt';
-        $sourceFile  = 'ftp://' . Config::get()->MENSA_FTP_SERVER . DIRECTORY_SEPARATOR . Config::get()->MENSA_FTP_FILE;
+        $sourceFile  = 'ftp://' . Config::get()->MENSA_FTP_SERVER . "/" . Config::get()->MENSA_FTP_FILE;
         // function settings
         $timeout  = 50;
         $fileOpen = 'w';
@@ -37,7 +37,7 @@ class MensaCronjob extends CronJob
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($curl, CURLOPT_FILE, $file);
 
-        $result = curl_exec($curl);;
+        $result = curl_exec($curl);
 
         curl_close($curl);
         fclose($file);

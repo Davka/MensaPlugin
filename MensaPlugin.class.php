@@ -30,7 +30,6 @@ class MensaPlugin extends StudIPPlugin implements SystemPlugin
     public function initialize()
     {
         $this->addStylesheet('assets/style.less');
-        die('foo');
     }
 
     public function perform($unconsumed_path)
