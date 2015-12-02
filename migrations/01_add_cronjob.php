@@ -25,6 +25,6 @@ class AddCronjob extends DBMigration
     private function getCronjobFilename()
     {
         return str_replace($GLOBALS['STUDIP_BASE_PATH'] . '/', '',
-            realpath(__DIR__ . '/../classes/Mensa_Cronjob.class.php'));
+            realpath(__DIR__ . '/../classes/MensaCronjob.class.php'));
     }
 }
