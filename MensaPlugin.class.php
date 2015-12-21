@@ -20,11 +20,6 @@ class MensaPlugin extends StudIPPlugin implements SystemPlugin
         $navigation->setURL(PluginEngine::GetURL($this, array(), 'show/index'));
         $navigation->setImage(Assets::image_path('icons/lightblue/mensa.svg'));
         Navigation::addItem('/start/mensaplugin', $navigation);
-
-        $sub = new Navigation(_('Aktueller Mensaplan'));
-        $sub->setURL(PluginEngine::GetURL($this, array(), 'show/index'));
-        $sub->setImage(Assets::image_path('icons/blue/mensa'));
-        $navigation->addSubNavigation('index', $sub);
     }
 
     public function initialize()
