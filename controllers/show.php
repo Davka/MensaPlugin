@@ -41,7 +41,7 @@ class ShowController extends StudipController
     public function index_action($timestamp = null)
     {
 
-        Navigation::activateItem('/start/mensaplugin/index');
+        Navigation::activateItem('/start/mensaplugin');
         $data = MensaHelper::getMenu();
         $today = strtotime('today');
         $this->timestamp = !is_null($timestamp) ? $timestamp : $today;
