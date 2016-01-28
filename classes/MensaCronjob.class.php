@@ -41,6 +41,8 @@ class MensaCronjob extends CronJob
 
         curl_close($curl);
         fclose($file);
+        chown($file, 'www-data');
+        chgrp($file, 'www-data');
 
         return $result;
     }
