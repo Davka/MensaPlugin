@@ -1,7 +1,5 @@
-<? $patterns = array('/\(/', '/\)/');
-$replacements = array('<sup>', '</sup>'); ?>
-
-
+<? $patterns  = ['/\(/', '/\)/'];
+$replacements = ['<sup>', '</sup>']; ?>
 <section>
     <? if (!empty($data)) : ?>
         <table class="default">

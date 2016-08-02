@@ -1,12 +1,24 @@
 <?
 
+/**
+ * Class MensaHelper
+ *
+ * @author   David Siegfried <david.siegfried@uni-vechta.de>
+ * @package  Vec
+ * @version  0.7
+ * @license  GPL2 or any later version
+ */
 class MensaHelper
 {
     public static function getMenu($timstamp = null)
     {
-        $file    = self::getFilename();
+        $file = self::getFilename();
+        
+        if (!file_exists($file)) {
+            return [];
+        }
         $handler = fopen($file, 'r');
-        $data    = array();
+        $data    = [];
         if ($handler !== false) {
             $headLine = fgetcsv($handler, 0, '	');
             while (($row = fgetcsv($handler, 0, '	')) !== false) {
@@ -29,10 +41,10 @@ class MensaHelper
         if (!$timstamp) {
             return $data;
         }
-
+        
         return $data[$timstamp];
     }
-
+    
     public static function getFilename()
     {
         return $GLOBALS['TMP_PATH'] . '/mensa.txt';

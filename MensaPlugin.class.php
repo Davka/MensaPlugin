@@ -2,36 +2,37 @@
 require 'bootstrap.php';
 
 /**
- * MensaPlugin.class.php
+ * Class MensaPlugin
  *
- * Mensa Plugin for UOS / Vechta
- *
- * @author  David Siegfried <david.siegfried@uni-vechta.de>
- * @version 0.6
+ * @author   David Siegfried <david.siegfried@uni-vechta.de>
+ * @package  Vec
+ * @version  0.7
+ * @license  GPL2 or any later version
  */
 class MensaPlugin extends StudIPPlugin implements SystemPlugin
 {
-
+    
     public function __construct()
     {
         parent::__construct();
-
+        
         $navigation = new Navigation(_('Mensaplan'));
-        $navigation->setURL(PluginEngine::GetURL($this, array(), 'show/index'));
+        $navigation->setURL(PluginEngine::GetURL($this, [], 'show/index'));
         $navigation->setImage(Assets::image_path('icons/lightblue/mensa.svg'));
         Navigation::addItem('/start/mensaplugin', $navigation);
+        
     }
-
+    
     public function initialize()
     {
         $this->addStylesheet('assets/style.less');
     }
-
+    
     public function perform($unconsumed_path)
     {
         $dispatcher         = new Trails_Dispatcher(
             $this->getPluginPath(),
-            rtrim(PluginEngine::getLink($this, array(), null), '/'),
+            rtrim(PluginEngine::getLink($this, [], null), '/'),
             'show'
         );
         $dispatcher->plugin = $this;
