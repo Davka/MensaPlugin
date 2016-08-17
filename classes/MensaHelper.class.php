@@ -5,7 +5,7 @@
  *
  * @author   David Siegfried <david.siegfried@uni-vechta.de>
  * @package  Vec
- * @version  0.7
+ * @version  0.8
  * @license  GPL2 or any later version
  */
 class MensaHelper
@@ -48,5 +48,13 @@ class MensaHelper
     public static function getFilename()
     {
         return $GLOBALS['TMP_PATH'] . '/mensa.txt';
+    }
+    
+    public static function replace($string)
+    {
+        $patterns     = ['/\(/', '/\)/'];
+        $replacements = ['<sup>', '</sup>'];
+        
+        return preg_replace($patterns, $replacements, htmlReady($string));
     }
 }

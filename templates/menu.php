@@ -1,5 +1,3 @@
-<? $patterns  = ['/\(/', '/\)/'];
-$replacements = ['<sup>', '</sup>']; ?>
 <section>
     <? if (!empty($data)) : ?>
         <table class="default">
@@ -21,10 +19,9 @@ $replacements = ['<sup>', '</sup>']; ?>
                     <? foreach ($data[$headline] as $row) : ?>
                         <tr>
                             <td>
-                                <?= preg_replace($patterns, $replacements, htmlReady($row['TEXT1'])) ?>
-                                <?= preg_replace($patterns, $replacements, htmlReady($row['TEXT2'])) ?>
-                                <?= preg_replace($patterns, $replacements, htmlReady($row['TEXT3'])) ?>
-
+                                <?= MensaHelper::replace($row['TEXT1']) ?>
+                                <?= MensaHelper::replace($row['TEXT2']) ?>
+                                <?= MensaHelper::replace($row['TEXT3']) ?>
                                 <? if (!empty($row['ZSNAMEN'])) : ?>
                                     <small><?= htmlReady($row['ZSNAMEN']) ?></small>
                                 <? endif ?>
@@ -36,7 +33,6 @@ $replacements = ['<sup>', '</sup>']; ?>
                                 <?= sprintf('%s &euro;', htmlReady($row['BED_PREIS'])) ?>
                             </td>
                         </tr>
-
                     <? endforeach ?>
                     </tbody>
                 <? endif ?>
@@ -45,5 +41,4 @@ $replacements = ['<sup>', '</sup>']; ?>
     <? else : ?>
         <p style="text-align: center"><?= _('Für diesen Tag wurden keine Informationen hinterlegt') ?></p>
     <? endif ?>
-
 </section>
