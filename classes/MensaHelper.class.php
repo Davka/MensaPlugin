@@ -5,7 +5,7 @@
  *
  * @author   David Siegfried <david.siegfried@uni-vechta.de>
  * @package  Vec
- * @version  0.8
+ * @version  0.9
  * @license  GPL2 or any later version
  */
 class MensaHelper
