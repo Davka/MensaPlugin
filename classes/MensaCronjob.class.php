@@ -41,9 +41,9 @@ class MensaCronjob extends CronJob
         $result = curl_exec($curl);
 
         if ($result) {
-            echo "Der Import der Mensa-Datei war nicht erfolgreich!\n";
+            echo "Der Import der Mensa-Datei war erfolgreich!\n";
         } else {
-            echo "Der Import der Mensa-Datei war erfolgreich\n";
+            echo "Der Import der Mensa-Datei war nicht erfolgreich\n";
         }
 
         curl_close($curl);
