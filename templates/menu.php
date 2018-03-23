@@ -26,7 +26,7 @@
                                     <small><?= htmlReady($row['ZSNAMEN']) ?></small>
                                 <? endif ?>
                             </td>
-                            <td><?= sprintf('%s €;', htmlReady($row['STD_PREIS'])) ?></td>
+                            <td><?= sprintf('%s €', htmlReady($row['STD_PREIS'])) ?></td>
                             <td><?= sprintf('%s €', htmlReady($row['BED_PREIS'])) ?></td>
                         </tr>
                     <? endforeach ?>

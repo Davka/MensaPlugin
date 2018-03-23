@@ -79,7 +79,6 @@ class MensaPlugin extends StudIPPlugin implements PortalPlugin
     {
         $date = $this->timeshift($date ?: time(), $direction);
         
-        header('Content-Type: text/html;charset=windows-1252');
         header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', time() + 30 * 60));
         header('Pragma: cache');
         header('Cache-Control: max-age=' . 30 * 60);
@@ -170,7 +169,7 @@ class MensaPlugin extends StudIPPlugin implements PortalPlugin
         $navigation = [];
         
         $nav = new Navigation('');
-        $nav->setURL(URLHelper::getLink($_SERVER['REQUEST_URI'],
+        $nav->setURL(URLHelper::getLink($GLOBALS['ABSOLUTE_URI_STUDIP'],
             ['mensa-widget' => ['date' => strtotime('yesterday', $date)]]));
         $nav->setImage(
             Icon::create(
@@ -182,7 +181,7 @@ class MensaPlugin extends StudIPPlugin implements PortalPlugin
         $navigation[] = $nav;
         
         $nav = new Navigation('');
-        $nav->setURL(URLHelper::getLink($_SERVER['REQUEST_URI'],
+        $nav->setURL(URLHelper::getLink($GLOBALS['ABSOLUTE_URI_STUDIP'],
             ['mensa-widget' => ['date' => strtotime('tomorrow', $date)]]));
         $nav->setImage(
             Icon::create(
