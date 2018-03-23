@@ -1,9 +1,9 @@
 pluginclassname=MensaPlugin
 pluginname=Mensa
 origin=Vec
-version=1.0
-studipMinVersion=3.1
-description=Zeigt den Mensaplan als Widget aber auch als Gesamtübersicht an
+version=2.0
+studipMinVersion=4.0
+description=Zeigt den Mensaplan als Widget aber auch als GesamtÃ¼bersicht an
 displayname = Studentenwerk OS Mensaplan
 descriptionshort = Studentenwerk OS Mensaplandarstellung
-descriptionlong = Zeigt den Mensaplan als Widget aber auch als Gesamtübersicht an
+descriptionlong = Zeigt den Mensaplan als Widget aber auch als GesamtÃ¼bersicht an

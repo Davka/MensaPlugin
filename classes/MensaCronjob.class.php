@@ -1,13 +1,10 @@
-<?php
+<?
 
 /**
- * Class MensaCrojob
- *
- * @author   David Siegfried <david.siegfried@uni-vechta.de>
- * @package  Vec
- * @version  0.8
- * @license  GPL2 or any later version
+ * @author  David Siegfried <david.siegfried@uni-vechta.de>
+ * @license GPL2 or any later version
  */
+
 class MensaCronjob extends CronJob
 {
     private static $curl_timeout = 50;
@@ -19,7 +16,7 @@ class MensaCronjob extends CronJob
 
     public static function getDescription()
     {
-        return _('Lädt die Speisepläne für das Studentenwerk Osnabrück herunter');
+        return _('LÃ¤dt die SpeiseplÃ¤ne fÃ¼r das Studentenwerk OsnabrÃ¼ck herunter');
     }
 
     public function setUp()

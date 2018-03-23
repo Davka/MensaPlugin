@@ -77,8 +77,8 @@
 
         $('.mensa-widget > section > table:has(.hidden)').each(function () {
             var hidden_count = $('.hidden', this).length,
-                label_hidden = xprintf(hidden_count === 1 ? "+{0} ausgeblendeter Eintrag" : "+{0} ausgeblendete Eintr‰ge".toLocaleString(), hidden_count),
-                label_visible = xprintf(hidden_count === 1 ? "-{0} ausgeblendeter Eintrag" : "-{0} ausgeblendete Eintr‰ge".toLocaleString(), hidden_count),
+                label_hidden = xprintf(hidden_count === 1 ? "+{0} ausgeblendeter Eintrag" : "+{0} ausgeblendete Eintr√§ge".toLocaleString(), hidden_count),
+                label_visible = xprintf(hidden_count === 1 ? "-{0} ausgeblendeter Eintrag" : "-{0} ausgeblendete Eintr√§ge".toLocaleString(), hidden_count),
                 toggle = $('<a href="#" class="mensa-peeker">').text(label_hidden).data('labels', {
                     hidden: label_hidden,
                     visible: label_visible

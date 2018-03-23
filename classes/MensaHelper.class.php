@@ -1,13 +1,10 @@
 <?
 
 /**
- * Class MensaHelper
- *
- * @author   David Siegfried <david.siegfried@uni-vechta.de>
- * @package  Vec
- * @version  0.9
- * @license  GPL2 or any later version
+ * @author  David Siegfried <david.siegfried@uni-vechta.de>
+ * @license GPL2 or any later version
  */
+
 class MensaHelper
 {
     public static function getMenu($timestamp = null)
@@ -17,6 +14,7 @@ class MensaHelper
         if (!file_exists($file)) {
             return [];
         }
+        
         $handler  = fopen($file, 'r');
         $data     = [];
         $language = substr($_SESSION['_language'], 0, 2);
@@ -33,7 +31,7 @@ class MensaHelper
                         'TEXT3'       => $row[$pos['text3']],
                         'STD_PREIS'   => number_format(str_replace(',', '.', $row[$pos['std_preis']]), 2, ',', '.'),
                         'BED_PREIS'   => number_format(str_replace(',', '.', $row[$pos['bed_preis']]), 2, ',', '.'),
-                        'GÄSTE_PREIS' => number_format(str_replace(',', '.', $row[$pos['gäste_preis']]), 2, ',', '.'),
+                        'GÃ„STE_PREIS' => number_format(str_replace(',', '.', $row[$pos['gÃ¤ste_preis']]), 2, ',', '.'),
                         'FREI1'       => $row[$pos['frei1']],
                         'ZSNUMMERN'   => $row[$pos['zsnummern']],
                         'ZSNAMEN'     => $row[$pos['zsnamen']],
@@ -50,9 +48,7 @@ class MensaHelper
         }
         return $timestamp ? $data[$timestamp] : $data;
     }
-
-
-
+    
     public static function getFilename()
     {
         return $GLOBALS['TMP_PATH'] . '/mensa.txt';

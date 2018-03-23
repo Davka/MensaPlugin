@@ -26,12 +26,8 @@
                                     <small><?= htmlReady($row['ZSNAMEN']) ?></small>
                                 <? endif ?>
                             </td>
-                            <td>
-                                <?= sprintf('%s &euro;', htmlReady($row['STD_PREIS'])) ?>
-                            </td>
-                            <td>
-                                <?= sprintf('%s &euro;', htmlReady($row['BED_PREIS'])) ?>
-                            </td>
+                            <td><?= sprintf('%s €;', htmlReady($row['STD_PREIS'])) ?></td>
+                            <td><?= sprintf('%s €', htmlReady($row['BED_PREIS'])) ?></td>
                         </tr>
                     <? endforeach ?>
                     </tbody>
@@ -39,6 +35,6 @@
             <? endforeach ?>
         </table>
     <? else : ?>
-        <p style="text-align: center"><?= _('F�r diesen Tag wurden keine Informationen hinterlegt') ?></p>
+        <p style="text-align: center"><?= _('Für diesen Tag wurden keine Informationen hinterlegt') ?></p>
     <? endif ?>
 </section>
