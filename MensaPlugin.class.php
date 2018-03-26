@@ -11,6 +11,7 @@ StudipAutoloader::addAutoloadPath(__DIR__ . '/classes');
 class MensaPlugin extends StudIPPlugin implements PortalPlugin
 {
     public           $mapping;
+    public           $order;
     protected static $injected = false;
     
     /**
@@ -24,7 +25,8 @@ class MensaPlugin extends StudIPPlugin implements PortalPlugin
         $this->order = ['Hauptgericht',
                         'Beilagen',
                         'Tagessalat',
-                        'Eintopf Teller', 'Dessert',
+                        'Eintopf Teller',
+                        'Dessert',
                         'Komplettmenü Fleisch/Fisch Caf',
                         'Essen Hochschulbedienstete',
                         'Komplettmenü veget. Cafe Loung'];

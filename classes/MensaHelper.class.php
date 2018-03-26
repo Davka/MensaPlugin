@@ -41,11 +41,14 @@ class MensaHelper
                         $item['TEXT2'] = $row[$pos['text2_1']] ?: $item['TEXT2'];
                         $item['TEXT3'] = $row[$pos['text3_1']] ?: $item['TEXT3'];
                     }
+                    $item = array_map('utf8_encode', $item);
                     $data[$date][$order][] = $item;
                 }
             }
-            fclose($handler);;
+            fclose($handler);
         }
+        
+       
         return $timestamp ? $data[$timestamp] : $data;
     }
     
