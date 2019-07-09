@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * @author  David Siegfried <david.siegfried@uni-vechta.de>

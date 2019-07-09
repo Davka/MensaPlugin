@@ -3,8 +3,8 @@
         <table class="default">
             <colgroup>
                 <col>
-                <col width="70px">
-                <col width="70px">
+                <col style="width: 70px">
+                <col style="width: 70px">
             </colgroup>
             <? foreach ($order as $headline) : ?>
                 <? if (isset($data[$headline])) : ?>

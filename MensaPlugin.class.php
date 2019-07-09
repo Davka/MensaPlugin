@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * @author  David Siegfried <david.siegfried@uni-vechta.de>
@@ -22,14 +22,16 @@ class MensaPlugin extends StudIPPlugin implements PortalPlugin
     {
         parent::__construct();
         
-        $this->order = ['Hauptgericht',
-                        'Beilagen',
-                        'Tagessalat',
-                        'Eintopf Teller',
-                        'Dessert',
-                        'Komplettmenü Fleisch/Fisch Caf',
-                        'Essen Hochschulbedienstete',
-                        'Komplettmenü veget. Cafe Loung'];
+        $this->order = [
+            'Hauptgericht',
+            'Beilagen',
+            'Tagessalat',
+            'Eintopf Teller',
+            'Dessert',
+            'Komplettmenü Fleisch/Fisch Caf',
+            'Essen Hochschulbedienstete',
+            'Komplettmenü veget. Cafe Loung'
+        ];
     }
     
     /**
