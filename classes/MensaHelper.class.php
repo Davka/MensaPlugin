@@ -16,7 +16,7 @@ class MensaHelper
         }
         
         $content = array_map(function ($string) {
-            return str_getcsv($string, ";");
+            return str_getcsv($string, "\t");
         }, file($file));
         
         $data     = [];
