@@ -16,6 +16,7 @@ class MensaHelper
         }
         
         $content = array_map(function ($string) {
+            $string = utf8_encode($string);
             return str_getcsv($string, "\t");
         }, file($file));
         
@@ -49,7 +50,7 @@ class MensaHelper
                 $data[$date][$order][] = $item;
             }
         }
-        
+     
         return $data[$timestamp];
     }
     
