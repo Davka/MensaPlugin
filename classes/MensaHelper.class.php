@@ -10,23 +10,23 @@ class MensaHelper
     public static function getMenu($timestamp = null)
     {
         $file = self::getFilename();
-        
+
         if (!file_exists($file)) {
             return [];
         }
-        
+
         $content = array_map(function ($string) {
             $string = utf8_encode($string);
             return str_getcsv($string, "\t");
         }, file($file));
-        
+
         $data     = [];
         $language = substr($_SESSION['_language'], 0, 2);
-        
+
         $headLine = $content[0];
         unset($content[0]);
         $pos = array_change_key_case(array_flip($headLine));
-        
+
         foreach ($content as $row) {
             if ($row[$pos['mensa']] == Config::get()->MENSA_LOCATION) {
                 $date  = strtotime($row[$pos['datum']]);
@@ -50,20 +50,20 @@ class MensaHelper
                 $data[$date][$order][] = $item;
             }
         }
-     
+
         return $data[$timestamp];
     }
-    
+
     public static function getFilename()
     {
         return $GLOBALS['TMP_PATH'] . '/mensa.txt';
     }
-    
+
     public static function replace($string)
     {
         $patterns     = ['/\(/', '/\)/'];
         $replacements = ['<sup>', '</sup>'];
-        
+
         return preg_replace($patterns, $replacements, htmlReady($string));
     }
 }

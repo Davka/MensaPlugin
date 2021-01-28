@@ -11,7 +11,7 @@ class AddConfigLocation extends Migration
     {
         return 'Lagert den Standort in die globale Konfiguration aus';
     }
-    
+
     public function up()
     {
         if (!Config::get()->MENSA_LOCATION) {
@@ -25,10 +25,10 @@ class AddConfigLocation extends Migration
             ]);
         }
     }
-    
+
     public function down()
     {
         Config::get()->delete('MENSA_LOCATION');
     }
-    
+
 }
